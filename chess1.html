@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHESS</title>
+    
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .col1box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            position: fixed;
+            left: 30rem;
+        }
+
+        .col1{
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+            transition: all ease-in .5s;
+            padding: 10px;
+        }
+
+        .col1:nth-child(even){
+            background-color: rgb(111, 190, 255);
+        }
+
+        .col2box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            position: fixed;
+            left: 36.2rem;
+        }
+
+        .col2{
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+        }
+
+        .col2:nth-child(odd){
+            background-color: rgb(111, 190, 255);
+        }
+
+        .col3box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center; 
+            flex-direction: column;
+            position: fixed;
+            left: 42.4rem;  
+        }
+
+        .col3{
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+        }
+
+        .col3:nth-child(even){
+            background-color: rgb(111, 190, 255);
+        }
+
+        .col4box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-direction: column;
+            position: fixed;
+            left: 48.5rem; 
+        }
+
+        .col4{
+            height: 100px;
+            width: 100px;
+            background-color: hsl(36, 100%, 90%);
+        }
+
+        .col4:nth-child(odd){
+            background-color: rgb(111, 190, 255);
+        }
+
+        .col5box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-direction: column;
+            position: fixed;
+            left: 54.7rem;           
+        }
+
+        .col5{
+            height: 100px;
+            width: 100px;
+            background-color:  hsl(36, 100%, 90%);
+        }
+
+        .col5:nth-child(even){
+            background-color: rgb(111, 190, 255);
+        }
+
+        .col6box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-direction: column;
+            position: fixed;
+            left: 60.8rem;           
+        }
+
+        .col6{
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+        }
+
+        .col6:nth-child(odd){
+            background-color: rgb(111, 190, 255);
+        }
+
+        .col7box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center; 
+            flex-direction: row;
+            flex-direction: column;
+            position: fixed;
+            left: 67rem;
+        }
+
+        .col7{
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+        }
+
+        .col7:nth-child(even){
+            background-color: rgb(111, 190, 255);
+        }
+
+        .col8box{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-direction: column;
+            position: fixed;
+            left: 73.2rem; 
+        }
+        .col8{
+            height: 100px;
+            width: 100px;
+            background-color: blanchedalmond;
+        }
+        .col8:nth-child(odd){
+            background-color: rgb(111, 190, 255);
+        }
+
+        /* Background Chess Piece Images */
+
+        #rook-black{
+            background-image: url(./Rook\ Black.png);
+            background-size: 100% 100%;
+        }
+
+        #knight-black{
+            background-image: url(./Knight\ Black.png);
+            background-size: 100% 100%;
+        }
+
+        #bishop-black{
+            background-image: url(./Bishop\ Black.png);
+            background-size: 100% 100%;
+        }
+
+        #queen-black{
+            background-image: url(./Queen\ Black.png);
+            background-size: 100% 110%;
+        }
+
+        #king-black{
+            background-image: url(./King\ Black.png);
+            background-size: 100% 100%;
+        }
+
+        #pawn-black{
+            background-image: url(./Pawn\ Black.png);
+            background-size: 100% 100%;
+        }
+
+        #pawn-white{
+            background-image: url(./Pawn\ White.png);
+            background-size: 100% 100%;
+        }
+
+        #rook-white{
+            background-image: url(./Rook\ White.png);
+            background-size: 100% 100%;
+        }
+
+        #knight-white{
+            background-image: url(./Knight\ White.png);
+            background-size: 100% 100%;
+        }
+
+        #bishop-white{
+            background-image: url(./Bishop\ White.png);
+            background-size: 100% 100%;
+        }
+
+        #queen-white{
+            background-image: url(./Queen\ White.png);
+            background-size: 100% 100%;
+        }
+
+        #king-white{
+            background-image: url(./King\ White.png);
+            background-size: 100% 100%;
+        }
+        
+    </style>
+
+</head>
+<body>
+    
+    <div class="col1box">
+        <div class="col1" id="rook-black"></div>
+        <div class="col1" id="pawn-black"></div>
+        <div class="col1"></div>
+        <div class="col1"></div>
+        <div class="col1"></div>
+        <div class="col1"></div>
+        <div class="col1" id="pawn-white"></div>
+        <div class="col1" id="rook-white"></div>
+    </div>
+
+    <div class="col2box">
+        <div class="col2" id="knight-black"></div>
+        <div class="col2" id="pawn-black"></div>
+        <div class="col2"></div>
+        <div class="col2"></div>
+        <div class="col2"></div>
+        <div class="col2"></div>
+        <div class="col2" id="pawn-white"></div>
+        <div class="col2" id="knight-white"></div>
+    </div>
+
+    <div class="col3box">
+        <div class="col3" id="bishop-black"></div>
+        <div class="col3" id="pawn-black"></div>
+        <div class="col3"></div>
+        <div class="col3"></div>
+        <div class="col3"></div>
+        <div class="col3"></div>
+        <div class="col3" id="pawn-white"></div>
+        <div class="col3" id="bishop-white"></div>
+    </div>
+
+    <div class="col4box">
+        <div class="col4" id="queen-black"></div>
+        <div class="col4" id="pawn-black"></div>
+        <div class="col4"></div>
+        <div class="col4"></div>
+        <div class="col4"></div>
+        <div class="col4"></div>
+        <div class="col4" id="pawn-white"></div>
+        <div class="col4" id="queen-white"></div>
+    </div>
+
+    <div class="col5box">
+        <div class="col5" id="king-black"></div>
+        <div class="col5" id="pawn-black"></div>
+        <div class="col5"></div>
+        <div class="col5"></div>
+        <div class="col5"></div>
+        <div class="col5"></div>
+        <div class="col5" id="pawn-white"></div>
+        <div class="col5" id="king-white"></div>
+    </div>
+
+    <div class="col6box">
+        <div class="col6" id="bishop-black"></div>
+        <div class="col6" id="pawn-black"></div>
+        <div class="col6"></div>
+        <div class="col6"></div>
+        <div class="col6"></div>
+        <div class="col6"></div>
+        <div class="col6" id="pawn-white"></div>
+        <div class="col6" id="bishop-white"></div>
+    </div>
+
+    <div class="col7box">
+        <div class="col7" id="knight-black"></div>
+        <div class="col7" id="pawn-black"></div>
+        <div class="col7"></div>
+        <div class="col7"></div>
+        <div class="col7"></div>
+        <div class="col7"></div>
+        <div class="col7" id="pawn-white"></div>
+        <div class="col7" id="knight-white"></div>
+    </div>
+
+    <div class="col8box">
+        <div class="col8" id="rook-black"></div>
+        <div class="col8" id="pawn-black"></div>
+        <div class="col8"></div>
+        <div class="col8"></div>
+        <div class="col8"></div>
+        <div class="col8"></div>
+        <div class="col8" id="pawn-white"></div>
+        <div class="col8" id="rook-white"></div>
+    </div>
+
+</body>
+</html>
